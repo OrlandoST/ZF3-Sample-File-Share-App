@@ -1,0 +1,19 @@
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        bootbox.prompt({
+            title: "Enter password to download this file:",
+            inputType: 'password',
+            callback: function (result)
+            {
+                $('#password').val(result);
+                $('#getFile').submit();
+            }
+        });
+    }
+    );
+</script>
+<form id="getFile" action="<?=$this->url('upload', ['action'=>'file'], ['query'=>['id' => $fileId]]); ?>" method="POST">
+    <input type="hidden" name="password" id="password" value="">'
+</form>
+<h1>Password protected file request</h1>

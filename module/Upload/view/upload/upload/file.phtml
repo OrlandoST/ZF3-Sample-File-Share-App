@@ -1,0 +1,12 @@
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $('#getFile').submit();
+    }
+    );
+</script>
+<form id="getFile" action="<?=$this->url('upload', ['action'=>'get'], ['query'=>['id' => $fileId]]); ?>" method="POST">
+    <input type="hidden" name="password" value="<?=$password ?>">'
+</form>
+
+<h1>Thank you for using our file share service!</h1>
