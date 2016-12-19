@@ -64,6 +64,7 @@
                     $file->size = $data['file']['size'];
                     $file->type = $data['file']['type'];
                     $file->password = $data['password'];
+                    $file->downloaded = 0;
 
                     $this->entityManager->persist($file);
 
@@ -205,6 +206,11 @@
 
             if($fileContents !== false)
             {
+                // update downloads counter
+                $this->entityManager->persist($file);
+                $file->downloaded++;
+                $this->entityManager->flush();
+
                 $response->setContent($fileContents);
             }
             else
