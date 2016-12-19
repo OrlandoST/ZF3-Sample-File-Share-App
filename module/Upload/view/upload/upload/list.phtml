@@ -1,18 +1,20 @@
 <?php if (!$authorized): ?>
 <script type="text/javascript">
     $(document).ready(function()
-        {
-            bootbox.confirm({ title: "Enter login and password to acces files list:",
+    {
+            bootbox.confirm({
+                title: "Enter login and password to acces files list:",
                 message: '<form id="loginForm" method="post" action="<?=$this->url('list'); ?>">\
                             <input type="text" name="user" class="bootbox-input bootbox-input-password form-control" autocomplete="off" placeholder="Login" /><br/>\
                             <input type="password" name="password" class="bootbox-input bootbox-input-password form-control" placeholder="Password" />\
                         </form>',
-                callback: function(result)
+                callback: function (result)
                 {
-                    if(result)
+                    if (result)
                         $('#loginForm').submit();
                 }
             });
+        }
     );
 </script>
     <h2>Authorization required</h2>
