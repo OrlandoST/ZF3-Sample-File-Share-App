@@ -112,7 +112,7 @@
                 <td><?=number_format(($file->size) /pow(1024, 2), 2) ?>MB</td>
                 <td><?=$file->type ?></td>
                 <td><?=$file->uploaded ?></td>
-                <td class="text-center"><?=$file->downloaded ?></td>
+                <td class="text-center"><?=(string)$file->downloaded ?></td>
             </tr>
         <?php endforeach;?>
                 </tbody>
